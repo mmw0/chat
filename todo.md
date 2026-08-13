@@ -1,0 +1,129 @@
+# Project TODO
+
+- [x] Define the Orbit Chat product language, visual system, and interaction principles.
+- [x] Build the responsive chat shell with a distinctive conversation workspace and navigation.
+- [x] Implement conversations, messaging, message actions, emoji reactions, and composer interactions.
+- [x] Add authenticated user profiles and persistent conversation/message data.
+- [x] Add real-time refresh, typing awareness, unread counts, and presence indicators.
+- [x] Apply and verify the chat database migration, including authenticated conversation and message CRUD.
+- [x] Add a persisted profile update flow for authenticated users.
+- [x] Implement live typing and presence state instead of display-only placeholders.
+- [x] Correct unread-count calculation and cover collaboration state with focused tests.
+- [x] Verify presence/profile tables and columns against the managed database after migration application.
+- [x] Exercise authenticated conversation, message, profile, typing, and presence flows against real persisted data.
+- [x] Add tests that cover the concrete unread and collaboration database behavior beyond pure validation helpers.
+- [x] Add a first-run onboarding path that turns guest curiosity into a clear sign-in and conversation-start journey.
+- [x] Add concise in-product guidance for creating a room, inviting collaborators, and discovering keyboard interactions.
+- [x] Add launch-ready metadata and browser polish that communicates the product’s distinctive positioning.
+- [x] Add direct-message creation, conversation search, and member management.
+- [x] Enforce direct-conversation and member-invitation constraints, including self-invite and conversation-type guards.
+- [x] Add focused tests for direct-message and invitation validation rules.
+- [x] Add loading, empty, and error states to the people picker.
+- [x] Write and run focused unit tests for core messaging and utility behavior.
+- [x] Run the full unit test suite and resolve any failures before delivery.
+- [x] Verify visual quality across desktop and mobile layouts, resolve defects, and save a delivery checkpoint.
+- [x] Save a delivery checkpoint for the final validated project state.
+- [x] Re-run final desktop and mobile visual review after checkpoint creation.
+- [x] Re-run final desktop visual review after checkpoint creation.
+- [x] Replace external OAuth dependence with native username-and-password registration and login.
+- [x] Store credentials securely with salted password hashes and issue application sessions safely.
+- [x] Add a concise native sign-in/sign-up experience that gates persisted chat actions.
+- [x] Test native registration, duplicate usernames, login failure, session lookup, and logout.
+- [x] Revalidate chat interactions and responsive layouts under the native auth flow.
+- [x] Exercise native-authenticated conversation, messaging, profile, typing, and presence flows against persisted data.
+- [x] Capture and review desktop and mobile signed-in states under the native username-and-password experience.
+- [x] Simplify Orbit into a mobile-first individual messaging experience with a clear, low-friction home screen.
+- [x] Add username search and secure contact-request records with pending, accepted, declined, and cancelled states.
+- [x] Add request sending, receipt, acceptance, decline, and cancellation actions that enable direct chat only after approval.
+- [x] Replace group-oriented navigation with contacts, requests, and one-to-one direct-message views.
+- [x] Make all primary mobile actions functional, accessible, and comfortable at phone screen sizes.
+- [x] Add focused tests for username discovery, request permissions, approval transitions, and direct-message access controls.
+- [x] Fix newly registered username discovery so a valid native account can be found reliably by exact or partial username search.
+- [x] Add permanent account deletion that safely removes account-linked chat data, invalidates the session, and frees the username for re-registration.
+- [x] Add confirmation safeguards and clear irreversible-action guidance for account deletion.
+- [x] Improve chat usability with familiar contact navigation, message affordances, timestamps, reply/reaction actions, and user presence cues.
+- [x] Test account discovery, deletion cleanup, username reuse, request transitions, and upgraded direct messaging against persisted data.
+- [x] Exercise signed-in mobile flows: search, request, accept, direct chat, messaging, reactions, and deletion at a phone viewport.
+- [x] Verify exact and partial username discovery for a newly registered account against the live database after login.
+- [x] Harden and verify deletion cleanup for legacy/orphan conversations, then confirm the same username can be registered again.
+- [x] Replace timestamp-only unread tracking with deterministic last-read message tracking so rapid messages are counted correctly.
+- [x] Preserve unread correctness for existing memberships with a legacy read timestamp but no last-read message ID.
+- [x] Add migration coverage for legacy membership rows so old messages do not reappear as unread after the upgrade.
+- [x] Add focused coverage for exact username search, direct-message rejection before approval, and direct-message access after approval.
+- [x] Verify request decline and cancellation transitions against persisted data.
+- [x] Verify legacy/orphan conversation cleanup during permanent account deletion against persisted data.
+- [x] Verify the unsigned mobile landing layout at a 375×812 phone viewport; preserve the remaining signed-in visual review as a manual follow-up.
+- [x] Capture and review the signed-in desktop workspace under the native username-and-password experience.
+- [x] Add advanced persisted message controls: edit, retract, pin, and save messages with clear ownership rules.
+- [x] Add message search and a focused saved-message workspace for fast retrieval.
+- [x] Add a futuristic command palette with keyboard shortcuts for navigation and core chat actions.
+- [x] Upgrade the chat workspace with a high-signal presence panel, pinned-message rail, focus modes, and responsive motion details.
+- [x] Add focused automated coverage for advanced message ownership, pinning, saving, and search policies.
+- [x] Validate the advanced workspace across phone and desktop viewports, then save a delivery checkpoint.
+- [x] Apply and verify the reviewed advanced-message database migration once the managed database DNS endpoint is reachable.
+- [x] Expand the command palette with real current-thread actions such as saving, pinning, and drafting from the latest signal.
+- [x] Add an approved-contact advanced workflow smoke test for editing, retracting, pinning, saving, and searching messages.
+- [x] Reconcile the existing database schema with Drizzle migration history so future migrations do not replay already-applied tables.
+- [x] Review signed-in advanced conversation captures at desktop and phone widths; verify the responsive split workspace and mobile message-action controls remain legible and reachable.
+- [x] Add a three-dot chat menu with find-in-chat, pinned messages, disappearing-message timers, clear-history, and delete-conversation controls, while retaining Saved signals as a dedicated private workspace.
+- [x] Add secure per-user chat-history clearing and mutually visible conversation deletion with explicit destructive-action confirmation.
+- [x] Add one-time trusted connection links that securely create a direct connection on redemption without a contact-request approval step.
+- [x] Add native password change with current-password verification, strong validation, and session continuity safeguards.
+- [x] Add a gallery of 100 privacy-preserving built-in visual avatars, with no upload or external-image support.
+- [x] Add configurable disappearing-message durations and expiry-aware message retrieval for direct chats.
+- [x] Research and implement additional high-value private-messaging controls consistent with the individual-first Orbit experience.
+- [x] Add automated coverage for invitation redemption, password changes, history management, avatar selection, and expiring messages.
+- [x] Validate the expanded privacy controls across desktop and phone viewports, including the selected direct-chat privacy controls, then save a delivery checkpoint.
+- [x] Capture and review the signed-in direct-chat workspace with the expanded three-dot privacy trigger and profile-control entry points at both desktop and phone viewports.
+- [x] Review the signed-in direct-chat workspace at desktop and phone sizes; verify the responsive message actions, composer, private-chat header, and three-dot trigger remain legible and reachable.
+- [x] Keep Saved signals as a dedicated private workspace rather than duplicating it in the current-conversation action menu.
+- [x] Remove shared direct-chat deletion so clearing or removing a chat affects only the person who chooses it.
+- [x] Add a clearly visible in-app connection-link generator and copy box for sharing a one-time trusted link.
+- [x] Replace the current glyph avatars with a varied built-in anime character avatar gallery and keep external/uploaded images disabled.
+- [x] Create and integrate original non-photographic anime-style icon portraits as a built-in vector gallery with 100 deterministic variations.
+- [x] Add automated coverage confirming one person’s chat removal does not remove the peer’s chat history or contact relationship.
+- [x] Validate the corrected deletion flow, connection-link generator, and anime avatar gallery at desktop and phone sizes.
+- [x] Review the corrected Orbit landing at desktop and phone sizes; retain the existing clean, readable mobile-first entry layout.
+- [x] Add contact-level favorites and conversation labels for faster personal organization.
+- [x] Add per-chat notification controls, including mute duration and a compact privacy-aware alert state.
+- [x] Add message drafts that persist per direct chat while a user navigates between conversations.
+- [x] Add reply context previews and quick jump-to-replied-message behavior in direct conversations.
+- [x] Add a personal conversation archive so users can declutter their active workspace without changing the peer’s access.
+- [x] Add focused automated coverage for the new personal organization, mute, draft, reply, and archive rules.
+- [x] Validate the advanced workflow at desktop and phone sizes, then save a delivery checkpoint.
+- [x] Define and document the direct-message encryption threat model, guarantees, and limitations.
+- [x] Add device-held cryptographic identity material and publish only public encryption keys to contacts.
+- [x] Encrypt direct-message content in the browser before upload and decrypt it only for approved chat members.
+- [x] Replace DOM-scanning ciphertext handling with structured message-layer decryption and validate normal UI rendering.
+- [x] Ensure private message controls, search, pinning, saved signals, replies, and trusted links do not expose plaintext on the service.
+- [x] Validate encrypted pin/save placeholders and trusted-link-created chat transport against the live service.
+- [x] Add privacy-hardening headers, reduced metadata retention, and clear in-app security status language.
+- [x] Add focused cryptography and encrypted-message transport tests, validate the workflow, and save a security delivery checkpoint.
+- [x] Reorganize message content, timestamps, sender labels, and controls for a clearer encrypted and regular chat thread.
+- [x] Validate the reorganized conversation view on desktop and mobile, then save a layout-fix checkpoint.
+- [x] Fix long unbroken message content so it wraps without stretching cards or creating horizontal thread scrolling.
+- [x] Validate long-text message wrapping on desktop and mobile, then save an overflow-fix checkpoint.
+- [x] Fix the disruptive secure-device key mismatch alert and explain its cause clearly.
+- [x] Add a user-confirmed secure-device recovery option that safely replaces an unavailable local key.
+- [x] Validate secure-device match, mismatch, recovery, and encryption continuity, then save a recovery-fix checkpoint.
+- [x] Run a full live two-user acceptance suite covering account, consent, direct chat, encrypted transport, and privacy controls.
+- [x] Verify two-user contact requests, approval, rejection, cancellation, trusted links, and private chat removal behavior.
+- [x] Verify two-user message actions, read/typing/presence, timers, organization controls, account settings, and recovery behavior.
+- [x] Fix every reproducible issue found, add targeted tests, re-run the acceptance suite, and save a stability checkpoint.
+- [x] Remove the persistent Secure device workspace notification while retaining secure-device recovery access in settings.
+- [x] Move the one-time connection-link control and management list from the workspace into Settings.
+- [x] Revalidate secure-device recovery, one-time link behavior, encrypted transport, and privacy controls for security regressions.
+- [x] Fix any reproducible security regression and save a security-control refinement checkpoint.
+- [x] Add non-intrusive secure-device recovery guidance inside account settings and revalidate the recovery flow after control relocation.
+- [x] Save the security-control refinement checkpoint after final settings and recovery validation.
+- [x] Define and document the secure multi-device pairing model, user confirmation steps, and limits for encrypted-history access.
+- [x] Add persistent device records, one-time pairing approvals, revocation, and append-only public-key history.
+- [x] Create a dedicated Settings tab for account security, trusted links, device pairing, and device/key history.
+- [x] Implement a secure second-device pairing flow with explicit approval from an authenticated existing device.
+- [x] Add focused pairing, device-history, revocation, and authorization regression coverage.
+- [x] Validate the settings and multi-device workflow across isolated browser identities, then save a delivery checkpoint.
+- [x] Prepare a credential-safe GitHub publication commit for the validated Orbit Chat source.
+- [x] Push the application source to the requested GitHub repository and document GitHub Pages runtime limitations.
+- [x] Remove managed-platform deployment and attribution references from source and repository documentation.
+- [x] Update GitHub repository presentation and commit attribution to the repository owner where feasible.
+- [x] Validate and publish the cleaned source and repository metadata.
