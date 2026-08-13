@@ -127,3 +127,5 @@
 - [x] Remove managed-platform deployment and attribution references from source and repository documentation.
 - [x] Update GitHub repository presentation and commit attribution to the repository owner where feasible.
 - [x] Validate and publish the cleaned source and repository metadata.
+- [ ] Assess GitHub Pages hosting for Orbit Chat and preserve the full-stack deployment boundary.
+- [ ] Publish and verify a GitHub Pages-compatible static project URL without misrepresenting it as the live chat service.
