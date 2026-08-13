@@ -129,3 +129,5 @@
 - [x] Validate and publish the cleaned source and repository metadata.
 - [ ] Assess GitHub Pages hosting for Orbit Chat and preserve the full-stack deployment boundary.
 - [ ] Publish and verify a GitHub Pages-compatible static project URL without misrepresenting it as the live chat service.
+- [ ] Diagnose and restore the fully functional server-backed Orbit Chat deployment.
+- [ ] Validate the repaired live sign-in and chat service while retaining GitHub Pages as a static landing page only.
