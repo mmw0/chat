@@ -618,7 +618,7 @@ export async function setTypingState(userId: number, conversationId: number, isT
     await db.delete(typingIndicators).where(and(eq(typingIndicators.userId, userId), eq(typingIndicators.conversationId, conversationId)));
     return;
   }
-  const expiresAt = new Date(Date.now() + 9_000);
+  const expiresAt = new Date(Date.now() + 20_000);
   await db.insert(typingIndicators).values({ conversationId, userId, expiresAt }).onDuplicateKeyUpdate({ set: { expiresAt } });
 }
 

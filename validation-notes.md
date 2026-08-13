@@ -15,3 +15,7 @@ A disposable account was intentionally assigned a different stored public-key id
 ## Settings-only security controls
 
 The persistent workspace **Secure device** indicator and floating one-time-link control were removed. The signed-in workspace was reviewed without either floating control. One-time link creation and revocation remain available inside account settings, where a disposable active link was created and revoked successfully. Account settings now also present non-intrusive secure-device recovery guidance. After this relocation, a fresh deliberate key-mismatch scenario again showed the password-confirmed recovery dialog and successfully recovered the review device.
+
+## Hosting diagnosis
+
+The server-backed production application accepted a fresh disposable username-and-password registration and rendered the authenticated workspace, confirming that native authentication and the main application service are available. The GitHub Pages URL was reachable but was serving its previously built static repository surface at review time; its static deployment cannot host the application API, authentication, database, or encrypted chat service. A repository-root landing page was committed for the Pages surface, pending GitHub Pages rebuild propagation.

@@ -158,6 +158,9 @@ try {
   await mutation(first, "chat.heartbeat", { activeConversationId: approval.conversationId });
   await mutation(second, "chat.heartbeat", { activeConversationId: approval.conversationId });
   await mutation(first, "chat.setTyping", { conversationId: approval.conversationId, isTyping: true });
+  const typingActivity = await query(second, "chat.activity", { conversationId: approval.conversationId });
+  const firstProfile = await query(first, "auth.me");
+  if (!typingActivity.typing.some(person => person.id === firstProfile.id)) throw new Error("Typing activity was not persisted");
   const timeline = await query(second, "chat.listMessages", { conversationId: approval.conversationId });
   if (!timeline.some(message => message.body === "Verified direct message.")) throw new Error("Direct message was not persisted");
   const verifiedMessage = timeline.find(message => message.body === "Verified direct message.");
@@ -186,9 +189,7 @@ try {
   const redactedTimeline = await query(second, "chat.listMessages", { conversationId: approval.conversationId });
   if (!redactedTimeline.some(message => message.id === retractable.id && message.body === "Message retracted" && message.deletedAt)) throw new Error("Message retraction was not visible to the approved peer");
   const activity = await query(second, "chat.activity", { conversationId: approval.conversationId });
-  const firstProfile = await query(first, "auth.me");
   if (!activity.members.some(person => person.id === firstProfile.id && person.presenceState === "online")) throw new Error("Heartbeat presence was not available to the approved peer");
-  if (!activity.typing.some(person => person.id === firstProfile.id)) throw new Error("Typing activity was not persisted");
   await mutation(second, "chat.markRead", { conversationId: approval.conversationId });
   const unreadAfterRead = await query(second, "chat.listConversations");
   if ((unreadAfterRead.find(conversation => conversation.id === approval.conversationId)?.unread ?? -1) !== 0) throw new Error("Read acknowledgement did not clear the recipient unread state");
